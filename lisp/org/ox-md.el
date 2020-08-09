@@ -406,7 +406,7 @@ a communication channel."
 	(pcase (org-element-type destination)
 	  (`plain-text			; External file.
 	   (let ((path (funcall link-org-files-as-md destination)))
-	     (if (not contents) (format "<%s>" path)
+	     (if (not contents) (format "%s" path)
 	       (format "[%s](%s)" contents path))))
 	  (`headline
 	   (format
@@ -458,7 +458,7 @@ a communication channel."
 		 ((string= type "file")
 		  (org-export-file-uri (funcall link-org-files-as-md raw-path)))
 		 (t raw-path))))
-	  (if (not contents) (format "<%s>" path)
+	  (if (not contents) (format "%s" path)
 	    (format "[%s](%s)" contents path)))))))
 
 
