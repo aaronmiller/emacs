@@ -24509,8 +24509,8 @@ maybe_produce_line_number (struct it *it)
      called when no display elements were produced from the
      following line, so the paragraph direction might be unknown.
      Therefore we cheat and add 2 blanks, one on either side.  */
-  pint2str (lnum_buf, it->lnum_width + 1, lnum_to_display);
-  strcat (lnum_buf, " ");
+  pint2str (lnum_buf, it->lnum_width + 4, lnum_to_display);
+  strcat (lnum_buf, "    ");
 
   /* Setup for producing the glyphs.  */
   init_iterator (&tem_it, it->w, -1, -1, &scratch_glyph_row,
